@@ -1,5 +1,13 @@
 <template>
   <div class="login">
+    <!--
+      配置 Form 表单验证：
+        1、必须给 el-form 组件绑定 model 为表单数据对象
+        2、给需要验证的表单项 el-form-item 绑定 prop 属性
+          注意：prop 属性需要指定表单对象中的数据名称
+        3、给 el-form 组件配置验证规则 rules
+
+    -->
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
       <h3 class="title">Hello Word</h3>
       <el-form-item prop="username">
@@ -74,8 +82,8 @@ export default {
         code: "",
         uuid: ""
       },
-      loginRules: {
-        username: [
+      loginRules: { //表单验证规则配置
+        username: [ // 规则列表[]
           { required: true, trigger: "blur", message: "请输入您的账号" }
         ],
         password: [

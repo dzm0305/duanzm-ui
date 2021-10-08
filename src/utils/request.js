@@ -6,6 +6,7 @@ import errorCode from '@/utils/errorCode'
 
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 // 创建axios实例
+// axios.create 复制一个axios,不同的axios 实例可以有不同的配置，而且不会互相冲突，复制出的axios和axios本身的额功能一模一样
 const service = axios.create({
   // axios中请求配置有baseURL选项，表示请求URL公共部分
   baseURL: process.env.VUE_APP_BASE_API,
@@ -103,4 +104,5 @@ service.interceptors.response.use(res => {
   }
 )
 
+// 导出请求方法
 export default service

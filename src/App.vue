@@ -1,4 +1,5 @@
 <template>
+  <!-- 根组件 -->
   <div id="app">
     <router-view />
   </div>
@@ -6,7 +7,7 @@
 
 <script>
 export default  {
-  name:  'App',
+  name: 'App',
     metaInfo() {
         return {
             title: this.$store.state.settings.dynamicTitle && this.$store.state.settings.title,
