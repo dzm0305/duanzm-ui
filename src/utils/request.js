@@ -44,6 +44,7 @@ service.interceptors.request.use(config => {
     config.params = {};
     config.url = url;
   }
+  // 当这里return config 之后请求才会真正的发送出去
   return config
 }, error => {
     console.log(error)

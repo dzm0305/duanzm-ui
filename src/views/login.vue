@@ -2,11 +2,13 @@
   <div class="login">
     <!--
       配置 Form 表单验证：
-        1、必须给 el-form 组件绑定 model 为表单数据对象
+        1、必须给 el-form 组件绑定 :model 为表单数据对象
         2、给需要验证的表单项 el-form-item 绑定 prop 属性
           注意：prop 属性需要指定表单对象中的数据名称
-        3、给 el-form 组件配置验证规则 rules
-
+        3、给 el-form 组件配置验证规则 :rules
+      手动出发表单验证：
+        1、给 el-form 设置ref 起个名字（名字随便起，不要重复即可）
+        2、通过ref 获取 el-form组件，调用组件的validate进行验证
     -->
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
       <h3 class="title">Hello Word</h3>

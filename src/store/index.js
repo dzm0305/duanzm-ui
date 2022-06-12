@@ -1,4 +1,5 @@
 import Vue from 'vue'
+// 引入Vuex
 import Vuex from 'vuex'
 import app from './modules/app'
 import user from './modules/user'

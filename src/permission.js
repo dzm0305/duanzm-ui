@@ -12,6 +12,7 @@ NProgress.configure({ showSpinner: false })
 //路由白名单列表，把路由添加到这个数组，不用登陆也可以访问
 const whiteList = ['/login', '/auth-redirect', '/bind', '/register']
 
+// 导航守卫 地址：https://router.vuejs.org/zh/guide/advanced/navigation-guards.html
 router.beforeEach((to, from, next) => {
   // 请求路由时进度条开始
   NProgress.start()
@@ -28,7 +29,7 @@ router.beforeEach((to, from, next) => {
       if (store.getters.roles.length === 0) {
         // 判断当前用户是否已拉取完user_info信息,访问 @store/modules/user.js下的 GetInfo
         store.dispatch('GetInfo').then(() => {
-          //访问 @store/modules/permission.js下的 GetInfo
+          //访问 @store/modules/permission.js下的 GenerateRoutes
           store.dispatch('GenerateRoutes').then(accessRoutes => {
             // 根据roles权限生成可访问的路由表
             router.addRoutes(accessRoutes) // 动态添加可访问路由表

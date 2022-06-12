@@ -16,7 +16,7 @@
 <script>
 export default {
   name: 'Hamburger',
-  props: {
+  props: {  // 用来接收父组件传给自子组件的值
     isActive: {
       type: Boolean,
       default: false
@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     toggleClick() {
+      // $emit子组件调用父组件的方法并传递数据
       this.$emit('toggleClick')
     }
   }

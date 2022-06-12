@@ -60,7 +60,7 @@ export const constantRoutes = [
     hidden: true
   },
   {
-    path: '',
+    path: '', // path 为空，会作为默认子路由渲染。
     component: Layout,
     redirect: 'index',
     children: [
